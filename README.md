@@ -1,0 +1,1 @@
+The project is written for the lab in uni. It contains all required chess logic processed in JS file.

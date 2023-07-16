@@ -1,0 +1,389 @@
+body{
+    background-color: #1d410d;
+    user-select:none;
+}
+
+a{
+    color:#cecece;
+}
+
+a:visited{
+    color:#cecece;  
+}
+
+a:active{
+    color:red;
+}
+
+a:hover{
+    color:#ffff00;
+}
+
+
+
+.upperPanel{
+    position:relative;
+    height:4em;
+    vertical-align: bottom;
+}
+
+.upperText{
+    display:none;
+    position: absolute;
+    bottom:0.5em;
+    padding-left: 20%;
+    font-size:2em;
+    font-weight: bold;
+    color:rgb(0, 255, 0);
+}
+
+
+main{
+   display:inline-flex; 
+}
+
+.leftPanel{
+    /* margin-left: 10em; */
+    position: relative;
+    display:inline;
+    text-align: center;
+    width:10em;
+    bottom:0;
+}
+
+.castlePanel{
+    /* in order the panel not to hop when the cite is loaded */
+    /* display:none; */
+    position: absolute;
+    bottom:0;
+    width:100%;
+}
+
+.castleTitle{
+    display:inline;
+    font-size: 2em;
+    color:blueviolet;
+}
+
+.castleButtons{
+    display:inline-flex;
+    width:90%;
+    margin-right:5%;
+}
+
+.castleButtons button{
+    width:50%;
+    height:100%;
+    color:rgb(0, 247, 255);
+    background-color:rgb(78, 18, 75);
+    border-color: rgb(0, 255, 0);
+}
+
+
+
+.timersPanel{
+    position: relative;
+    top:50%;
+    transform: translate(0,-50%); 
+    height: 22em;
+}
+
+.timersPanel>div{
+    font-size: 1.4em;
+    background-color: rgb(222, 246, 2);
+    border: 1px solid rgb(2, 255, 2);
+}
+
+.timersPanel .timer2{
+    width:95%;
+}
+.timersPanel .timer1{
+    position:absolute;
+    bottom:0;
+    width:95%;
+}
+
+
+
+
+.chess-board{
+    width:44em;
+    height:44em;;
+    border-collapse:collapse;
+    border-spacing:0;
+    line-height: 0;
+}
+
+.chess-board tr:nth-child(odd)>td:nth-child(odd), tr:nth-child(even)>td:nth-child(even){
+    background-color: #EEEED2;
+}
+
+.chess-board td{
+    position: relative;
+    width:5.5em;
+    height:5.5em;
+    background-color: #769656;
+}
+
+.chess-board .digit{
+    position: absolute;
+    top:0.7em;
+    left:0.3em;
+    font-size:1.2em;
+    pointer-events:none;
+}
+
+.chess-board .letter{
+    position: absolute;
+    right:0.3em;
+    bottom:0.7em;
+    font-size:1.2em;
+    pointer-events:none;
+}
+
+.chess-board img{
+    width:100%;
+    height:100%;
+    cursor: pointer;
+}
+
+
+
+
+
+
+.sidebar{
+    width:6em;
+    margin-right: 5em;
+    text-align: center;
+}
+
+.sidebar .wPieces{
+    display:none;
+    height:100%;
+    background-color: rgb(38, 118, 143);
+    box-shadow: inset 0px 0px 0px 0.3em rgb(235, 251, 0);
+    
+}
+
+.sidebar .bPieces{
+    display:none;
+    height:100%;
+    background-color: rgb(38, 118, 143);
+    box-shadow: inset 0px 0px 0px 0.3em rgb(235, 251, 0);
+}
+
+.sidebar img{
+    width:5em;
+    height:5em;
+}
+
+
+
+
+.formPanel{
+    width:50em;
+}
+
+.formPanel:active, :hover, :focus {
+    outline: 0;
+    outline-offset: 0;
+}
+
+.formPanel .formPanel_middleLocation{
+    position: relative;
+    width:30em;
+    height:100%;
+    background-color: rgb(0, 83, 69);
+    color:rgb(0, 204, 255);
+    text-align: center;
+    left:50%;
+    transform: translate(-50%,0); 
+    margin-bottom:0;   
+    border: 1px solid;
+    border-color:rgb(0, 114, 0);
+
+    font-weight: bold;
+}
+
+.formPanel .formPanel_middleLocation div{
+    margin-bottom: 1.4em;
+}
+
+.formPanel h2{
+    margin-bottom: 0;
+}
+
+.formPanel hr{
+    margin-bottom:1.4em;
+    color:rgb(8, 179, 246);
+}
+
+.formPanel label{
+    font-size: 1.1em;
+}
+
+.formPanel .page1 label{
+    display:block;
+    
+}
+
+.formPanel .leaveFeedback img{
+    width:2.4em;
+    height:2.4em;
+}
+
+
+
+
+.formPanel .newGame section{
+    margin-top: 0.5em;
+    margin-bottom: 2em;
+}
+
+.formPanel .newGame img{
+    width:3em;
+    height:3em;
+}
+
+.formPanel .newGame .colorChoose{
+    /* makes it to be at the center */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formPanel .newGame .highlightedPiece{
+    width:4em !important;
+    height:4em !important;
+    box-shadow: inset 0px 0px 0px 3px rgb(0, 167, 22);
+    border-radius: 20%;
+}
+
+.formPanel .newGame span{
+    margin:0 0.3em;
+}
+
+
+
+
+
+.formPanel .newGame #TimerSet br{
+    margin-bottom: 0.8em;
+}
+
+.formPanel input, select, datalist{
+    color:rgb(216, 0, 0);
+}
+
+.formPanel .submit{
+    position: absolute;
+    width:8em;
+    height:2em;
+    bottom:2em;
+    font-weight: bold;
+
+    /* makes button to be at the center */
+    transform: translate(-50%, -50%);
+
+    background-color: rgb(0, 19, 128);
+    color:rgb(251, 255, 0);
+    box-shadow: inset 0px 0px 0px 3px rgb(30, 202, 0);
+    border:none;
+    border-radius: 8%;
+}
+
+
+
+
+.green{
+    box-shadow: inset 0px 0px 0px 0.6em green;
+}
+
+.red{
+    box-shadow: inset 0px 0px 0px 0.6em red;
+}
+
+.orange{
+    box-shadow: inset 0px 0px 0px 0.6em rgb(255, 157, 0);
+}
+
+.forbidDrag{
+    pointer-events: none;
+}
+
+
+
+
+#qtChartSection{
+    position:relative;
+    width:50em;
+    border: 2px solid;
+    border-color:rgb(0, 114, 0);
+}
+
+#piecesQtChart{
+    position:absolute;
+    bottom:0;
+}
+
+
+
+
+.bottomPanel{
+    /* The panel doesn't go from the end of the previous one. */
+    margin-top:-4px;
+    display:inline-flex;
+}
+
+
+.turnPanel{
+    position: relative;
+    width:44em;
+    height:5em;
+    margin-left: 10em;
+    margin-right: 11em;;
+}
+
+.turnPanel .turnTitle{
+    position: absolute;
+    bottom:0;
+    left:35%;
+    font-size: 2em;
+    vertical-align:middle;
+    background-color: rgb(21, 141, 0);
+    padding-left: 1em;
+    padding-right: 1em;
+    color:white;
+    border:1px solid;
+    border-color:rgb(0, 255, 0);
+}
+
+
+.menu{
+    text-align: center;
+    width:50em;
+}
+
+.menu #buttons{
+    position: relative;
+    top:50%;
+    transform: translate(0, -50%); 
+}
+
+.menu button{
+    font-size: 1.2em;
+    color: rgb(43, 205, 226);
+    background-color:rgb(78, 18, 75);
+    border: 2px solid;
+    border-color:rgb(0, 255, 0);
+}
+
+
+
+
+.links{
+    display:grid;
+    padding-top: 1em;
+    height:3em;
+}

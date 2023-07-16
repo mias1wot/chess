@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <title>lab3</title>
+        <link rel="stylesheet" href="lab3.css">
+    </head>
+
+    <body>
+        <!-- The first 2 letters of picture file name are important: 1:White or Black; 2:Name of piece! -->
+        <!-- Name for knight is wN_Knight. -->
+        <!-- All td of table have indexes that are formed of digits: from 0 to 63 -->
+
+        <header class="upperPanel"><span class="upperText"></span></header>
+
+
+        <main>
+            <section class="leftPanel">
+                <div class="castlePanel" style="display:none">
+                    <span class="castleTitle">Castle</span>
+                    <br>
+                    <div class="castleButtons">
+                        <button id='lButton' onclick="clickCastle(event)">left</button>
+                        <button id='rButton' onclick="clickCastle(event)">right</button>
+                    </div>
+                </div>
+
+                <div class="timersPanel">      
+                    <div class="timer2" style="display:none">0:00:00</div>
+                    <div class="timer1" style="display:none">0:00:00</div>
+                </div>
+            </section>
+
+
+            <table class="chess-board" ondrop="drop(event)" ondragover="allowDrop(event)" ondragend="dragend(event)"></table>
+
+
+            <section class="sidebar">
+                <section class="wPieces">
+                    <img id="wRook" src='wRook.png'>
+                    <img id="wN_Knight" src='wN_Knight.png'>
+                    <img id="wBishop" src='wBishop.png'>
+                    <img id="wQueen" src='wQueen.png'>
+                </section>
+
+                <section class="bPieces">
+                    <img id="bRook" src='bRook.png'>
+                    <img id="bN_Knight" src='bN_Knight.png'>
+                    <img id="bBishop" src='bBishop.png'>
+                    <img id="bQueen" src='bQueen.png'>
+                </section>
+            </section>
+
+
+            <section class="formPanel">
+            <!-- <section class="formPanel" style="display: none"> -->
+                <div class="formPanel_middleLocation">
+                    <section class="leaveFeedback" style="display:none">
+                    <!-- <section class="leaveFeedback"> -->
+                        <h2>We would like to know<br> some information about you:</h2>
+                        <hr>
+                        <form action="lab3.html" method="GET">
+                            <section class="page1">
+                                <div>
+                                    <label for="userName">Name</label>
+                                    <input id="userName" type="text" name="userName">
+                                </div>
+
+                                <div>
+                                    <label for="userEmail">Email</label>
+                                    <input id="userEmail" type="text" name="userEmail">
+                                </div>
+
+                                <div>
+                                    <label for="userPass">Password</label>
+                                    <input id="userPass" type="password" name="userPass">
+                                </div>
+
+                                <div>
+                                    <label for="userAge">Age</label>
+                                    <input id="userAge" type="text" name="userAge">
+                                </div>
+
+                                <div>
+                                    <label for="userCountry">Country</label>
+                                    <input id="userCountry" type="text" list="countries">
+                                    <datalist id="countries">
+                                        <option value="Ukraine"></option>
+                                        <option value="USA"></option>
+                                        <option value="Germany"></option>
+                                    </datalist>
+                                </div>
+
+
+                                <div>
+                                    <label for="mastery">How good are you at chess?</label>
+                                    <select id="mastery" name="userMastery">
+                                        <option value="1">Beginner</option>
+                                        <option value="2">Medium</option>
+                                        <option value="3">Above medium</option>
+                                        <option value="4">Master</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label for="userOpinion">How would you rate the style of the cite?</label>
+                                    <span>Excellent</span><input id="userOpinion" type="range" name="userOpinion" min="0" max="5"><span>Couldn't be better</span>
+                                </div>
+
+                                <div>
+                                    <label for="userPhoneNumber">Phone number (+...)</label>
+                                    <input id="userPhoneNumber" type="text" name="userPhoneNumber">
+                                </div>
+                            </section>
+
+
+
+                            <section class="page2" style="display: none">
+                                <div id="colorChoice">
+                                    <label>What color do you prefer to play?</label>
+                                    <br>
+                                    <input id="white" type="radio" name="userPreference" value="white">
+                                    <label for="white">White</label>
+
+                                    <input id="black" type="radio" name="userPreference" value="black">
+                                    <label for="black">Black</label>
+
+                                    <input id="both" type="radio" name="userPreference" value="both">
+                                    <label for="both">Both</label>
+                                </div>
+
+                                <div>
+                                    <label>What are your favourite pieces?</label>
+                                    <br>
+                                    <input id="ufPawn" type="checkbox" name="userFavouritePiece" value="pawn">
+                                    <label for=ufPawn><img src="wPawn.png"></label>
+                                    <br>
+
+                                    <input id="ufRook" type="checkbox" name="userFavouritePiece" value="rook">
+                                    <label for="ufRook"><img src="wRook.png"></label>
+                                    <br>
+
+                                    <input id="ufKnight" type="checkbox" name="userFavouritePiece" value="knight">
+                                    <label for="ufKnight"><img src="wN_Knight.png"></label>
+                                    <br>
+
+                                    <input id="ufBishop" type="checkbox" name="userFavouritePiece" value="bishop">
+                                    <label for="ufBishop"><img src="wBishop.png"></label>
+                                    <br>
+
+                                    <input id="ufQueen" type="checkbox" name="userFavouritePiece" value="queen">
+                                    <label for="ufQueen"><img src="wQueen.png"></label>
+                                    <br>
+
+                                    <input id="ufKing" type="checkbox" name="userFavouritePiece" value="king">
+                                    <label for="ufKing"><img src="wKing.png"></label>
+                                    <br>
+                                </div>
+
+                                <div>
+                                    <label for="userRecommendations">What would you recommend to improve?</label>
+                                    <br>
+                                    <textarea id="userRecommendations" name="userRecommendations" rows="6" cols="30"></textarea>
+                                </div>
+                            </section>
+
+                            <input id="startedGame" type="hidden" name="startedGame">
+
+                            <div>
+                                <input class="submit" type="submit" value="Next" onclick="submitStep(event)">
+                            </div>
+                        </form>
+                    </section>
+
+                    <section class="newGame">
+                        <h2>Starting a new game:</h2>
+                        <hr>
+                        <label>Choose the color:</label>
+                        <br>
+                        <section class="colorChoose">
+                            <img id="wChooseColor" class="highlightedPiece" src="wPawn.png" onclick="chooseColor(event)">
+                            <span>OR</span>
+                           <img id="bChooseColor" src="bPawn.png" onclick="chooseColor(event)">
+                        </section>
+                        <hr>
+
+                        <section>
+                            <input type="checkbox" id="HaveToMoveCheckbox">
+                            <label for="HaveToMoveCheckbox">If you take a piece, you must make a move.</label>
+                        </section>
+                        <hr>
+
+                        <section id="TimerSet">
+                            <input type="checkbox" id="TimerSetCheckbox">
+                            <label for="TimerSetCheckbox">Set timer (hh:mm:ss) (h&lt10)</label>
+                            <br>
+
+                            <input id="Timer" type="time" max="09:59:59" step="1" value="00:30:00">
+                        </section>
+                        <hr>
+
+                        <button class="submit" onclick="newGame()">Begin game</button>
+
+                    </section>
+                </div>
+            </section>    
+
+            <!-- <section id="qtChartSection"> -->
+            <section id="qtChartSection" style="display:none">
+                <!-- for Chart to work -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+                <canvas id="piecesQtChart" height="260"></canvas>
+            </section>
+        </main>
+
+
+        <section class="bottomPanel">
+            <section class="turnPanel">
+                <span class="turnTitle">White move</span>
+            </section>
+
+            <section class="menu">
+                <div id="buttons">
+                    <button onclick="switchToNewGame()">New game</button>
+                    <button onclick="switchToGraphics()">Graphics</button>
+                    <button onclick="switchToFeedback()">Leave feedback</button>
+                </div>
+            </section>
+
+        </section>
+
+
+        <footer>
+            <section class="links">
+                <div>
+                    <a href="https://www.chess.com/uk/pravila-shakhi#special-rules" target="_blank">How to play</a>
+                </div>
+                <div>
+                    <a href="https://www.chess.com/puzzles/problem/26743" target="_blank">Copied from here</a>
+                </div>
+            </section>
+        </footer>
+
+
+
+
+        <script src="lab3.js"></script>
+        
+    </body>
+</html>
